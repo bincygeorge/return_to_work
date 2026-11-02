@@ -8,3 +8,654 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+:root {
+    --primary: #426b5b;
+    --primary-dark: #315243;
+    --background: #f6f7f3;
+    --surface: #ffffff;
+    --text: #26352e;
+    --muted: #6b786f;
+    --border: #e1e7df;
+    --accent: #e8f0e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    color: var(--primary-dark);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.header-tagline {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.2;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--muted);
+}
+
+article {
+    margin: 20px 0;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgb(30 50 35 / 4%);
+}
+
+article p {
+    margin: 8px 0;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px 12px;
+    border: 1px solid #cbd5cb;
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+input[type="submit"],
+button,
+.button {
+    display: inline-block;
+    width: auto;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.button:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+form {
+    max-width: 650px;
+}
+
+form.button_to {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+form.button_to button {
+    margin-top: 0;
+    background: #f7e9e6;
+    color: #8a3930;
+}
+
+form.button_to button:hover {
+    background: #efd5d0;
+}
+
+.flash {
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+
+.flash-notice {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.flash-alert,
+.errors {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #fbe9e7;
+    color: #8a3930;
+}
+
+.errors {
+    margin: 20px 0;
+}
+
+.errors li {
+    margin: 5px 0;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .main-content {
+        padding-top: 28px;
+    }
+
+    article {
+        padding: 18px;
+    }
+}
+/* Career roadmap layout */
+.page-heading {
+    margin-bottom: 32px;
+}
+
+.page-heading > p {
+    margin-bottom: 20px;
+}
+
+.roadmap-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(250px, 1fr);
+    gap: 24px;
+    align-items: start;
+    margin-top: 0;
+}
+
+.motivation-panel {
+    align-self: start;
+    margin-top: 0;
+}
+
+.goals-section {
+    min-width: 0;
+}
+
+.goal-card {
+    margin: 0 0 18px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e1e7df;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgb(30 50 35 / 4%);
+}
+
+.goal-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.goal-category {
+    color: #426b5b;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.goal-status {
+    padding: 4px 10px;
+    background: #e8f0e8;
+    color: #315243;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.goal-card h2 {
+    margin-bottom: 8px;
+}
+
+.goal-date {
+    font-size: 0.9rem;
+}
+
+.goal-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.goal-actions form.button_to {
+    margin: 0;
+}
+
+.goal-actions form.button_to button {
+    margin: 0;
+}
+
+.empty-state {
+    padding: 28px;
+    background: #ffffff;
+    border: 1px dashed #b9cbbd;
+    border-radius: 14px;
+}
+
+/* Motivational quote panel */
+.motivation-panel {
+    position: sticky;
+    top: 12px;
+    align-self: start;
+    padding: 30px 24px;
+    background: #eaf0e6;
+    border: 1px solid #dbe5d7;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.plant-icon {
+    margin-bottom: 16px;
+    font-size: 2.8rem;
+}
+
+.panel-label {
+    color: #52715e;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.motivation-panel blockquote {
+    margin: 24px 0 16px;
+    color: #315243;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    line-height: 1.5;
+}
+
+.quote-author {
+    color: #6b786f;
+    font-size: 0.9rem;
+}
+
+.motivation-panel hr {
+    width: 50px;
+    margin: 24px auto;
+    border: 0;
+    border-top: 2px solid #b9cbbd;
+}
+
+.gentle-reminder {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .roadmap-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .motivation-panel {
+        position: static;
+        grid-row: 1;
+        padding: 24px 20px;
+    }
+
+    .motivation-panel blockquote {
+        font-size: 1.25rem;
+    }
+
+    .goal-card {
+        padding: 20px;
+    }
+}
+/* Weekly Planner */
+
+.weekly-planner {
+    margin-top: 32px;
+    padding: 28px;
+    background: #f8f8f2;
+    border: 1px solid #e5e8dc;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(60, 75, 55, 0.05);
+}
+
+.planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.planner-header h2 {
+    margin: 0;
+    color: #344b3b;
+    font-size: 26px;
+}
+
+.planner-header p {
+    margin: 8px 0 0;
+    color: #777f73;
+}
+
+.planner-week {
+    margin: 22px 0;
+    color: #64745f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.planner-day {
+    margin-top: 18px;
+}
+
+.planner-day h3 {
+    margin-bottom: 12px;
+    color: #465b49;
+    font-size: 17px;
+}
+
+.planner-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #e7e9e1;
+    border-radius: 12px;
+}
+
+.planner-item strong {
+    color: #344b3b;
+}
+
+.planner-item p {
+    margin: 6px 0;
+    color: #71816c;
+    font-size: 13px;
+}
+
+.planner-item small {
+    color: #777777;
+}
+
+.planner-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.planner-actions a {
+    color: #526b53;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.planner-actions button {
+    padding: 6px 10px;
+    color: #8a4e4e;
+    background: #fff5f3;
+    border: 1px solid #f0d9d4;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.planner-empty {
+    padding: 35px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px dashed #d6ddce;
+    border-radius: 14px;
+}
+
+.planner-empty h3 {
+    color: #465b49;
+}
+
+.planner-empty p {
+    margin-bottom: 20px;
+    color: #777f73;
+}
+
+.form-page {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #e5e8dc;
+    border-radius: 18px;
+}
+
+.form-page h1 {
+    color: #344b3b;
+}
+
+.form-page > p {
+    color: #777f73;
+}
+
+@media (max-width: 600px) {
+    .weekly-planner {
+        padding: 18px;
+    }
+
+    .planner-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .planner-header h2 {
+        font-size: 22px;
+    }
+
+    .form-page {
+        padding: 20px;
+    }
+}
+/* Planner completion checkbox alignment */
+
+.planner-item-title form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.planner-item-title input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #71866b;
+    cursor: pointer;
+}
+
+.planner-item-title strong {
+    line-height: 1.5;
+}
+
+.planner-item-title .completed-task {
+    color: #92998e;
+    text-decoration: line-through;
+}
+
+.planner-item > div:first-child {
+    min-width: 0;
+}
+/* Weekly Progress Tracker */
+
+.weekly-progress {
+    margin: 24px 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e8dc;
+    border-radius: 14px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.progress-heading h3 {
+    margin: 0;
+    color: #465b49;
+    font-size: 18px;
+}
+
+.progress-heading span {
+    color: #71816c;
+    font-size: 14px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    background: #e8ecdf;
+    border-radius: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #829779;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    margin: 10px 0 0;
+    color: #526b53;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .weekly-progress {
+        padding: 16px;
+    }
+
+    .progress-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* Minimalist Journal — Career Roadmap */
+
+.goals-section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.goal-card {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e3e8dd;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 22px 4px;
+    margin-bottom: 0;
+}
+
+.goal-card:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.goals-section h1,
+.goals-section h2 {
+    color: #354b3b;
+    letter-spacing: -0.5px;
+}
+
+.goal-card h3 {
+    color: #354b3b;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.goal-card p {
+    color: #737c70;
+    line-height: 1.7;
+}

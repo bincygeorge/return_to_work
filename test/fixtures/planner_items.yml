@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  category: MyString
+  scheduled_date: 2026-10-27
+  start_time: 2026-10-27 13:20:29
+  end_time: 2026-10-27 13:20:29
+  completed: false
+
+two:
+  title: MyString
+  description: MyText
+  category: MyString
+  scheduled_date: 2026-10-27
+  start_time: 2026-10-27 13:20:29
+  end_time: 2026-10-27 13:20:29
+  completed: false

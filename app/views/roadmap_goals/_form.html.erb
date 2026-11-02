@@ -1,0 +1,45 @@
+<%= form_with model: roadmap_goal do |form| %>
+  <% if roadmap_goal.errors.any? %>
+    <div class="errors">
+      <h3>Please correct the following errors:</h3>
+      <ul>
+        <% roadmap_goal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :category %>
+    <%= form.select :category,
+                    ["Ruby", "Ruby on Rails", "SQL", "QA & Testing", "Job Search"],
+                    { include_blank: "Choose a category" },
+                    required: true %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status,
+                    [["Planned", "planned"],
+                     ["In progress", "in_progress"],
+                     ["Completed", "completed"]] %>
+  </div>
+
+  <div>
+    <%= form.label :target_date %>
+    <%= form.date_field :target_date %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

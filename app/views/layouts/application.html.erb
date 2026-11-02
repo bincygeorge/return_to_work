@@ -22,8 +22,24 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
+  <header class="site-header">
+    <div class="container header-content">
+      <%= link_to "Return to Work", root_path, class: "brand" %>
+      <span class="header-tagline">Small steps. Real progress.</span>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <% if notice.present? %>
+      <div class="flash flash-notice"><%= notice %></div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="flash flash-alert"><%= alert %></div>
+    <% end %>
+
     <%= yield %>
+  </main>
   </body>
-</html>
+</html>z
